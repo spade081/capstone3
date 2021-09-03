@@ -1,0 +1,64 @@
+@font-face {
+  src:url("./font/Supersonic.ttf");
+  font-family: Supersonic;
+ }
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+ 
+ :root{
+   --primary:#f4cfcf;
+ }
+body{
+  background-size:cover;
+background-image: url("./images/webbg.jpg");
+background-repeat: no-repeat;
+background-position: center;
+height:100vh;
+
+}
+
+
+.cardHiglight{
+      .card{
+        background: transparent;
+        border: none;
+      }
+      
+        h1{
+          font-family: Supersonic;
+          font-weight: 400;
+          font-size: 6vw;
+        
+          text-transform: capitalize;
+        }
+}
+
+.Product-list{
+
+
+
+
+
+
+
+  h1{
+    color:#dac404;
+   
+  }
+}
+
+
+ 
+
+
+
+
+
+
+
+//  .cardHighlights span, h1{
+//    font-family: Supersonic;
+//    text-transform: capitalize;
+//    font-weight: 400;
+//    font-size: 5vw;
+//  }
