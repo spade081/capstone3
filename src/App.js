@@ -4,6 +4,7 @@ import './Order.scss';
 import './login.scss'
 import './Register.scss'
 import './CartStyle.scss'
+import './Admin.scss'
 
 //routing
 import { BrowserRouter as Router } from 'react-router-dom';

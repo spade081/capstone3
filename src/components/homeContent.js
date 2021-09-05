@@ -44,7 +44,7 @@ export default function HomeContent(){
                     <Card className="card text-center mt-5">
                         <Card.Body>
                             <Card.Title>
-                            <h1>Best <span>Product</span></h1>
+                            <h1>Sample <span>Product</span></h1>
                          
                             </Card.Title>
                             <Card.Text>

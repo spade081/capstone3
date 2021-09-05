@@ -234,7 +234,7 @@ export default function AdminView(props){
 
     return(
         <>
-            <div className="text-center bg-dark py-1 text-white">
+            <div className="text-center mt-5 py-1 text-white AdminHeader">
                 <h2>Admin Dash Board</h2>
                 <div className="d-flex justify-content-center">
                     <Button variant="primary" onClick={openAdd}>Add New Product</Button>

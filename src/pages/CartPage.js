@@ -72,37 +72,8 @@ export default function CartPage() {
         fetchCartListTotal={fetchCartListTotal}
       />
   <Container >
-              <div className="cartpage-checkout-wrapper">   
-       
-                    
-                  
-                          <h1 className="cartpage-summary-text">Order Summary</h1>
-                      
-
-                              <h3>
-                                Subtotal ({cartList.length}{" "}
-                                {cartList.length < 2 ? "item" : "items"})
-                              </h3>
-                              <span className="cartpage-price">
-                                &#8369; {cartListTotal.toLocaleString()}.00
-                              </span>
-                                    
-                          
-                          
-                                <p className="cartpage-total">Total</p>
-                                <span className="cartpage-total">
-                                  &#8369; {cartListTotal.toLocaleString()}.00
-                                </span>
-                        
-                          
-                            <button className="cartpage-btn" onClick={() => orderAll()}>
-                              Proceed to Checkout
-                            </button>
-
-                
               
-              </div>
-             </Container>
+  </Container>
 
      
       
