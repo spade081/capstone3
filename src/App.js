@@ -1,5 +1,9 @@
 import React, {Fragment, useState}  from "react";
 import './App.scss';
+import './Order.scss';
+import './login.scss'
+import './Register.scss'
+import './CartStyle.scss'
 
 //routing
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -20,6 +24,7 @@ import Register from './pages/Register'
 import PageNotFound from './pages/PageNotFound'
 import SpecificProduct from './pages/SpecificProduct';
  import OrderPage from './pages/OrderPage';
+ import CartPage from './pages/CartPage'
 
 //react context
 import UserContext from './UserContext'
@@ -64,6 +69,9 @@ function App() {
                   <Route exact path="/product" component={ProductPage} />
                   <Route exact path="/order">
                     {user.email === null ? <Redirect to="/" />:<OrderPage/>}
+                  </Route>
+                  <Route exact path="/cart">
+                    {user.email === null ? <Redirect to="/" />:<CartPage/>}
                   </Route>
                   <Route exact path="/product/:productId" component={SpecificProduct}/>
                   <Route component={PageNotFound} />

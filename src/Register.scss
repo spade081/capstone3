@@ -1,0 +1,30 @@
+.ContainerRegister{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    h1{
+        color:#f4cfcf;
+    }
+    form{
+       
+        width: 50%;
+        padding: 10px;
+
+        Button{
+            display: block;
+            background-color: #f4cfcf;
+            border: none;
+           
+          
+        }
+        .disabledButton{
+            background-color: #f4cfcf;
+        }
+        .activeButton{
+        
+            border:none;
+        }
+    }
+  
+}

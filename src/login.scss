@@ -1,0 +1,34 @@
+
+.formLogin{
+    
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        color:#f4cfcf;
+    }
+   
+    form{
+      
+        width: 500px;
+        padding: 10px;
+        Button{
+            display: block;
+            background-color: #f4cfcf;
+            border: none;
+            cursor: pointer;
+          
+        }
+        .disabledButton{
+            background-color: #f4cfcf;
+        }
+      
+        .activeButton{
+        
+            border:none;
+        }
+    }
+    
+}

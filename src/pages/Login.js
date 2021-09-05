@@ -1,6 +1,6 @@
 import React,{useState, useEffect, useContext, Fragment} from 'react'
 
-import {Form, Button} from 'react-bootstrap'
+import {Form, Button, Container} from 'react-bootstrap'
 import { Redirect, useHistory } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import UserContext from '../UserContext'
@@ -55,7 +55,7 @@ function loginUser(e){
 					Swal.fire({
 						tite: 'Yeeees',
 						icon:'success',
-						text:'Thank you for Logging in to zuitt booking'
+						text:'Welcome Enjoy Your Day'
 					})
 					//fetch user's details from our token
 					fetch(`${ process.env.REACT_APP_API_URL }/users/profile`,{
@@ -114,8 +114,11 @@ function loginUser(e){
 
 	return(
 		<Fragment>
-		<h1>Login</h1>
-			<Form onSubmit={e=>loginUser(e)}>
+		
+		<div className="formLogin">
+		
+		<Form onSubmit={e=>loginUser(e)} >
+			<h1>Login</h1>
 				
 
 				<Form.Group>
@@ -128,11 +131,16 @@ function loginUser(e){
 					<Form.Control type="password" placeholder="Password" value={password} onChange={e=> setPassword(e.target.value)} required/>
 				</Form.Group>
 				{loginButton ?
-						<Button variant="primary" type="submit">Submit</Button>
+						<Button variant="primary" type="submit" className="activeButton">Submit</Button>
 						:
-						<Button variant="primary" type="submit" disabled>Submit</Button>
+						<Button variant="primary" type="submit" className="disabledButton" disabled>Submit</Button>
 				}
  			</Form>
+	
+		
+			
+		</div>
+			
 		</Fragment>
 		)
 }

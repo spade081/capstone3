@@ -13,8 +13,8 @@ export default function SpecificProduct(){
     const[description, setDescription] = useState('')
 
     const[price, setPrice] = useState(0)
-    const [quantity, setQuantity] =useState(0)
-    const [total, setTotal] = useState(0)
+    const [quantity, setQuantity] =useState(1)
+    const [total, setTotal] = useState()
     //useParams() contains
     const {productId} = useParams()
 
@@ -26,6 +26,7 @@ export default function SpecificProduct(){
             setName(data.name)
             setDescription(data.description)
             setPrice(data.price)
+            setTotal(data.price * quantity)
             
 
         })
@@ -66,9 +67,7 @@ export default function SpecificProduct(){
         })
     }
 
-    // export default function Quantity(){
-    //     const [count, setCount]
-    // }
+  
 
     const  addButton =(quantity, price)=>{
         setQuantity(quantity += 1)
@@ -85,10 +84,43 @@ export default function SpecificProduct(){
         }
     }
 
+    const addToCart = (productId) => {
+        console.log(productId)
+     
+        fetch(`${process.env.REACT_APP_API_URL}/carts/add-cart/${productId}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+          body: JSON.stringify({
+            productQty: quantity
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.error) {
+              Swal.fire({
+                title: "Opps!!!",
+                icon: "Error",
+                text: "Something went wrong",
+              });
+            } else {
+              Swal.fire({
+                title: "Yeeeyyy!!!",
+                icon: "success",
+                text: `You added ${name} to your Cart`,
+              });
+            }
+          })
+          .catch((err) => console.log(`ERROR ERROR ERROR ${err}`));
+      };
+
 
     return(
         <Container>
-            <Card>
+            <Card >
                 <Card.Header className="bg-dark text-white text-center"><h4>{name}</h4></Card.Header>
                 <Card.Body>
                     <Card.Text>{description}</Card.Text>
@@ -102,10 +134,16 @@ export default function SpecificProduct(){
                 <Card.Footer>
                     {       
                         user.accessToken !==null ?
+                     <>
                          <Button variant="primary" block onClick={() => purchase()}>
                          Purchase
                      </Button>
+                     <Button variant="primary" block onClick={() => addToCart(productId)}>
+                         Add to Cart
+                     </Button>
+                     </>
                      :
+                     
                    <Button variant="primary"  >
                          <Link className="text-white"  to="/login">Login To to Purchased</Link>
                    </Button>

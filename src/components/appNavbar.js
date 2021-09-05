@@ -6,6 +6,7 @@ import UserContextReg from '../UserContext'
 import { Route, Switch } from 'react-router-dom';
 // import PageNotFound from '../pages/PageNotFound'
 import UserContext from '../UserContext'
+import logo from '../images/final-logo.png'
 
 
 export default function AppNavbar(){
@@ -30,8 +31,14 @@ export default function AppNavbar(){
     (   
          <>
              <Nav.Link onClick={logout}>Logout</Nav.Link>
-             <Nav.Link as={NavLink} to="/order" >My Order</Nav.Link>
-          
+            
+            
+          {
+              !user.isAdmin  &&  <Nav.Link as={NavLink} to="/order" >My Order</Nav.Link>
+          }
+          {
+              !user.isAdmin  &&  <Nav.Link as={NavLink} to="/cart" >My Cart</Nav.Link>
+          }
         </>
 
 
@@ -53,9 +60,9 @@ export default function AppNavbar(){
         <Fragment>
     
      
-      <Navbar bg="light" expand="lg">
+      <Navbar  expand="lg" className="Navbar">
           <Navbar.Brand as={Link} to="/">
-             Pinto Cakes
+          <img src={logo} alt="final logo"/>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">

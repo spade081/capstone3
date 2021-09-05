@@ -3,22 +3,20 @@
   font-family: Supersonic;
  }
  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
  
  :root{
    --primary:#f4cfcf;
  }
-body{
-  background-size:cover;
-background-image: url("./images/webbg.jpg");
-background-repeat: no-repeat;
-background-position: center;
-height:100vh;
-
-}
-
 
 .cardHiglight{
+  background-size:cover;
+  background-image: url("./images/webbg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+ 
+ 
+  height: 97vh;
+ 
       .card{
         background: transparent;
         border: none;
@@ -31,20 +29,54 @@ height:100vh;
         
           text-transform: capitalize;
         }
+        Button{
+          background-color: #f4cfcf;
+          border: none;
+          width: 120px;
+          padding: 5px;
+        }
+        Button:hover{
+          background-color: #a6825a;
+          transition: ease-out .8s;
+         
+        }
 }
 
-.Product-list{
 
-
-
-
-
-
-
-  h1{
-    color:#dac404;
-   
+.cardHiglight2{
+  height: 100vh;
+  .card{
+    background: transparent;
+    border: none;
   }
+  
+    h1{
+      font-family: Supersonic;
+      font-weight: 400;
+      font-size: 6vw;
+      color: black;
+      text-transform: capitalize;
+
+      span{
+       
+        color:#dac404;
+      }
+    }
+
+    Button{
+      background-color: #f4cfcf;
+      border: none;
+      width: 120px;
+      padding: 5px;
+    }
+    Button:hover{
+      background-color: #a6825a;
+      transition: ease-out .8s;
+     
+    }
+}
+.Navbar{
+  background-color:#a2e3df ;
 }
 
 

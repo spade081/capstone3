@@ -15,7 +15,9 @@ export default function UserView({productData}){
             //only render active
             if(product.isActive === true){
                 return(
-                    <Product key={product._id} productProp={product}/>
+ 
+               <Col sm={10} md={8} lg={6} className="mx-auto "> <Product key={product._id} productProp={product}/> </Col>
+               
                 )
             }else{
                 return null
@@ -26,19 +28,22 @@ export default function UserView({productData}){
     },[productData])
     
     return(
-        <Fragment>
-            <Container fluid className="my-4 px-lg-4" >
-                <div className="Product-list mx-4npo">
-                <Row lg={3} md={3} sm={1} className="my-4 justify-content-center text-center">
-                   {products}
-                </Row>
-                </div>
-               
-            </Container>
-          
+        <Container>
+        <div className="userProduct">
+          <Row>
+            
+         
+              {products}
+        
+                         
+          </Row>
+
+        </div>
 
            
-        </Fragment>
+            
+        </Container>
+       
 
     )
 }

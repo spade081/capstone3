@@ -1,0 +1,57 @@
+
+.card-container{
+   
+display: block;
+
+    .card{
+      
+        background-color: transparent;
+        font-weight: 400;
+        margin: auto;
+      
+        
+        
+      
+    }
+    Button{
+        background-color: #f4cfcf;
+        border: none;
+       
+      
+    }
+    
+   h1{
+    color:#dac404;
+   }
+}
+
+.productCake{
+    h2{
+        font-size: 30px;
+    }
+    span{
+        color:#dac404; 
+        font-size: 30px;
+        font-weight: 700;
+    }
+    
+  
+
+    img{
+        border-radius: 10px;
+    }
+    img:hover{
+        transform: translateY(-25px);
+        transition: transform 400ms ease-out;
+    }
+}
+
+.productInfo{
+    border-radius: 10px;
+    text-align: center;
+    background: none;
+    font-weight: 700;
+    h1{ 
+        color:#dac404;
+    }
+}

@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from 'react';
-import { Row,Col, Card, Button } from 'react-bootstrap';
+import { Row,Col, Card, Button ,Container} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom'
 
@@ -12,31 +12,34 @@ export default function Product({productProp}){
     
 
     return(
-        
-             <Row>
-            <Col>
-                <Card>
-                    <div className="Product">
-                    <Card.Body>
-                        <Card.Title>
-                            <h1>{name}</h1>
-                        </Card.Title>
-                        <Card.Text>
-                        <h3>{description}</h3>
-                        <h6>Price:</h6> 
-                        <p>{price}</p>
-                        </Card.Text>
-                        <Link to={`/product/${_id}`}>Details</Link>
-                    </Card.Body>
 
-                    </div>
-                   
-
+            
                     
-                </Card>
+                        <Card className="m-3 productInfo">
                 
-            </Col>
-        </Row>
+                            <Card.Body>
+                                <Card.Title>
+                                <h1>{name}</h1>
+                                </Card.Title>
+                                <Card.Text>
+                                <h3>{description}</h3>
+                                <h6>Price:</h6> 
+                                <p>{price}</p>
+                                </Card.Text>
+                                <Link to={`/product/${_id}`}><h4>Details</h4></Link>
+                            </Card.Body>
+
+                        
+                        
+
+                            
+                        </Card>
+                        
+                    
+              
+             
+    
+             
 
     
        

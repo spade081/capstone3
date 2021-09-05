@@ -100,8 +100,10 @@ export default function Register(){
 	}
 	return(
 		<>
-			<h1>Register</h1>
-			<Form onSubmit={e=> registerUser(e)}>
+		<div className="ContainerRegister">
+	
+		<Form onSubmit={e=> registerUser(e)}>
+		<h1>Register</h1>
 			<Form.Group>
 					<Form.Label>First Name:</Form.Label>
 					<Form.Control type="text" placeholder="Enter First Name:"  value={firstName} onChange={e=> setFirtName(e.target.value)} required/>
@@ -129,15 +131,18 @@ export default function Register(){
 				</Form.Group>
 
 				{registerButton ?
-						<Button variant="primary" type="submit" >Submit</Button>
+						<Button variant="primary" type="submit" className="activeButton" >Submit</Button>
 						:
-						<Button variant="primary" type="submit" disabled>Submit</Button>
+						<Button variant="primary" type="submit" className="disabledButton" disabled>Submit</Button>
 				}
 			
 				
 
 
 			</Form>
+		</div>
+		
+		
 		</>
 		)
 }
